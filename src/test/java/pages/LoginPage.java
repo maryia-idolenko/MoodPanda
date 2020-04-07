@@ -10,17 +10,15 @@ public class LoginPage {
 
     public LoginPage openPage() {
         open(URL);
-        $(By.xpath("//*[@id=\"ContentPlaceHolderContent_AppStore\"]/a[1]/img")).waitUntil(Condition.visible, 30000);
+        $(By.id("ContentPlaceHolderContent_AppStore")).waitUntil(Condition.visible, 30000);
         return this;
     }
 
     public LoginPage login(String user, String password) {
-        sleep(10000);
-        $(By.xpath("//*[@id=\"ContentPlaceHolderContent_TextBoxEmail\"]")).sendKeys(user);
-        sleep(10000);
-        $(By.xpath("//*[@id=\"ContentPlaceHolderContent_TextBoxPassword\"]")).sendKeys(password);
-        sleep(10000);
-        $(By.xpath("//*[@id=\"ContentPlaceHolderContent_ButtonLogin\"]")).click();
+        sleep(2000);
+        $(By.id("ContentPlaceHolderContent_TextBoxEmail")).sendKeys(user);
+        $(By.id("ContentPlaceHolderContent_TextBoxPassword")).sendKeys(password);
+        $(By.id("ContentPlaceHolderContent_ButtonLogin")).click();
         return this;
     }
 }
